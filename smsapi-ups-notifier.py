@@ -16,7 +16,7 @@ class UpsAction(Enum):
 
 def build_message(ups_action: UpsAction, site_name: str):
     now = datetime.now()
-    now_formatted = now.strftime('%Y-%M-%d %H:%M:%S')
+    now_formatted = now.strftime('%Y-%m-%d %H:%M:%S')
 
     return site_name + ": " + "UPS Power " + ups_action.name + " at " + now_formatted
 
@@ -26,7 +26,7 @@ def main(ups_action: UpsAction, site_name: str):
     try:
         for number in PHONE_NUMBERS:
             message = build_message(ups_action, site_name)
-            client.sms.send(to=number, message=message)
+            #client.sms.send(to=number, message=message)
 
             logging.info("Sent sms to %s with message '%s'", number, message)
     except SmsApiException as e:
