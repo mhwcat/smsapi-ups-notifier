@@ -1,0 +1,4 @@
+SMSAPI_TOKEN = ""
+PHONE_NUMBERS = [
+
+]
